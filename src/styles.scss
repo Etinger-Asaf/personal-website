@@ -1,3 +1,74 @@
-.header {
-    color: lightblue;
+@use "./assets/waveSvg/wave";
+@use "./components//Navigation/nav";
+@use "./components/AboutMe/aboutMe";
+@use "./components/Projects/projects";
+@use "./components//ProjectsCard//projectCard";
+
+:root {
+  $lightFontColor: white;
+  $blueFontColor: rgb(5, 7, 57);
+  $darkFontColor: rgb(0, 0, 0);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// General styles
+
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  color: white;
+}
+
+input,
+button,
+a,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Typo styles
+h1 {
+  font-weight: 600;
+}
+// Layout styles
+
+.bodyContainer {
+  // min-height: 100vh; //After more content will be add I can remove this.
+  background-image: linear-gradient(
+    to bottom,
+    #6fffe9,
+    #5bc0becc,
+    #3a506b,
+    #1c2541,
+    #0b132b,
+    #040812
+  );
+}
+
+.globalContentContainer {
+  text-align: left;
+  letter-spacing: 1.2;
+  line-height: 1.6;
+  padding: 1rem 2rem;
+  margin: auto;
+}
+
+.content {
+  height: 55vh;
+  overflow-y: scroll;
 }

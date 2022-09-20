@@ -1,0 +1,18 @@
+.navContainer {
+  background-color: white;
+  display: flex;
+  margin-top: 1rem;
+  color: rgb(0, 0, 75);
+
+  & h1 {
+    margin: 0;
+    padding: 0 2rem;
+  }
+  & .navBtnContainer {
+    margin-left: auto;
+
+    & a {
+      padding: 1rem 2rem;
+    }
+  }
+}
