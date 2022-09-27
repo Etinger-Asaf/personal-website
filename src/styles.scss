@@ -2,7 +2,9 @@
 @use "./components//Navigation/nav";
 @use "./components/AboutMe/aboutMe";
 @use "./components/Projects/projects";
-@use "./components//ProjectsCard//projectCard";
+@use "./components/ProjectsCard//projectCard";
+@use "./components/Work/work";
+@use "./components/Contact/contact";
 
 :root {
   $lightFontColor: white;
@@ -28,7 +30,9 @@ body {
   overflow-x: hidden;
   color: white;
 }
-
+header {
+  height: 30vh;
+}
 input,
 button,
 a,
@@ -48,7 +52,8 @@ h1 {
 // Layout styles
 
 .bodyContainer {
-  // min-height: 100vh; //After more content will be add I can remove this.
+  min-height: 100vh; //After more content will be add I can remove this.
+
   background-image: linear-gradient(
     to bottom,
     #6fffe9,
@@ -64,11 +69,22 @@ h1 {
   text-align: left;
   letter-spacing: 1.2;
   line-height: 1.6;
-  padding: 1rem 2rem;
   margin: auto;
 }
 
 .content {
   height: 55vh;
   overflow-y: scroll;
+}
+
+.contentScroll {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 70vh;
+}
+.contentContainer {
+  height: 70vh;
+  margin-bottom: 10px;
+  margin: auto;
+  width: 90%;
 }

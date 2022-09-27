@@ -1,4 +1,26 @@
+.projectsContainer {
+  scroll-snap-align: start;
+  height: 100%;
+  width: 90%;
+}
 .projectFlexContainer {
   display: flex;
   justify-content: space-evenly;
+}
+
+.headerAnimation {
+  animation: slide-up-down ease-in-out 2s;
+}
+
+@keyframes slide-up-down {
+  from,
+  to {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-30%);
+  }
+  60% {
+    transform: translateY(30%);
+  }
 }

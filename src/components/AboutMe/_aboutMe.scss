@@ -1,5 +1,7 @@
 .aboutMeContainer {
-  width: fit-content;
+  scroll-snap-align: start;
+  width: 90%;
+  height: 100%;
   & h1,
   h2 {
     font-weight: 600;
@@ -8,6 +10,7 @@
   & h1 {
     opacity: 0;
     animation: slide-up ease-in 0.4s forwards;
+    margin-top: 0;
   }
   & h2 {
     opacity: 0;
