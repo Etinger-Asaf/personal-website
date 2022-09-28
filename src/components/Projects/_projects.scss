@@ -1,26 +1,63 @@
 .projectsContainer {
   scroll-snap-align: start;
-  height: 100%;
-  width: 90%;
 }
 .projectFlexContainer {
   display: flex;
-  justify-content: space-evenly;
+  overflow-y: scroll;
+  scroll-snap-type: x mandatory;
+}
+.projectsHeader {
+  padding: 1rem;
+}
+
+.projectHeaderChar {
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  opacity: 0;
 }
 
 .headerAnimation {
-  animation: slide-up-down ease-in-out 2s;
+  & .projectHeaderChar {
+    animation: slide-up-down ease-in-out 1s forwards;
+  }
 }
 
 @keyframes slide-up-down {
-  from,
-  to {
+  from {
     transform: translateY(0);
   }
   30% {
-    transform: translateY(-30%);
+    transform: translateY(-10%);
+    opacity: 1;
   }
   60% {
-    transform: translateY(30%);
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@for $i from 1 through 8 {
+  .projectHeaderChar {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * (0.1s);
+    }
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .projectHeaderChar {
+    font-size: 1rem;
+  }
+}
+
+// Desktop Screen
+@media screen and (min-width: 1200px) {
+  .projectHeaderChar {
+    font-size: 1.7rem;
   }
 }

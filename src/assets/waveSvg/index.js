@@ -1,4 +1,4 @@
-export default function wave() {
+export default function wave({ waveHeight }) {
   return (
     <svg
       data-name="Layer 1"

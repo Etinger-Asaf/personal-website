@@ -1,3 +1,5 @@
+$font-size: 1rem;
+
 .contactContainer {
   display: flex;
   align-items: center;
@@ -5,9 +7,10 @@
   scroll-snap-align: start;
   flex-direction: column;
   height: 70vh;
+  overflow-x: auto;
 
   & span {
-    font-size: 3rem;
+    font-size: $font-size;
     padding: 1rem;
     // opacity: 0;
     visibility: hidden;
@@ -16,9 +19,33 @@
   & input {
     padding: 1rem;
     background-color: transparent;
-    font-size: 3rem;
+    font-size: $font-size;
     outline: none;
     border: none;
     width: 100%;
+  }
+}
+
+// Tablet Screen
+@media screen and (min-width: 850px) {
+  .contactContainer {
+    & span {
+      font-size: 2rem;
+    }
+    & input {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Desktop Screen
+@media screen and (min-width: 1200px) {
+  .contactContainer {
+    & span {
+      font-size: 3rem;
+    }
+    & input {
+      font-size: 3rem;
+    }
   }
 }

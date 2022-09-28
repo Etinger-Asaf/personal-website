@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import NavBar from "./components/Navigation";

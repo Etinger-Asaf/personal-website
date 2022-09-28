@@ -6,7 +6,6 @@ const Contact = () => {
   const isInputVisiable = useElementOnScreen(inputRef);
 
   useEffect(() => {
-    console.log(isInputVisiable.isIntersecting);
     if (!isInputVisiable.isIntersecting || inputRef.current === null) return;
 
     inputRef.current.focus();

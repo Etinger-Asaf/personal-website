@@ -1,7 +1,5 @@
 .aboutMeContainer {
   scroll-snap-align: start;
-  width: 90%;
-  height: 100%;
   & h1,
   h2 {
     font-weight: 600;
@@ -11,10 +9,12 @@
     opacity: 0;
     animation: slide-up ease-in 0.4s forwards;
     margin-top: 0;
+    font-size: 1.7rem;
   }
   & h2 {
     opacity: 0;
     animation: slide-up ease-in 0.4s 0.2s forwards;
+    font-size: 1.3rem;
   }
   & .pFirst {
     opacity: 0;
@@ -27,14 +27,16 @@
 }
 
 .iconTechContainer {
-  margin-top: 2rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
+  overflow-y: scroll;
 }
 
 .techIcon {
   animation: icon-wave ease-in-out 2.5s forwards;
   opacity: 0;
+  width: 15%;
 }
 
 @keyframes slide-up {

@@ -3,6 +3,24 @@ import ProjectsCard from "../ProjectsCard";
 import addClassOnViewportEnter from "../../reusable/FN addClassOnIntersection";
 import cardImg from "../../assets/images/landscape.jpeg";
 
+const splitedStr = (str) => {
+  const tempSlice = str.split(" ");
+  const headerToRender = tempSlice.map((el) => el.split(""));
+  return headerToRender;
+};
+
+const str = splitedStr("Projects");
+
+const mapStr = str.map((el) =>
+  el.map((char, i) => {
+    return (
+      <span key={`${char} ${i}`} className="projectHeaderChar">
+        {char}
+      </span>
+    );
+  })
+);
+
 const Projects = () => {
   const headerRef = useRef();
 
@@ -10,11 +28,12 @@ const Projects = () => {
 
   return (
     <div className="projectsContainer globalContentContainer">
-      <h1 className="projectsHeader" ref={headerRef}>
-        Some of my projects
-      </h1>
+      <div className="projectsHeader" ref={headerRef}>
+        {mapStr[0]}
+      </div>
       <div className="projectFlexContainer">
         <ProjectsCard
+          className="projectCard"
           imgUrl={cardImg}
           title="blabla"
           description="mvkdfnvjfkbhcdjs"
@@ -22,12 +41,14 @@ const Projects = () => {
           deploymenyUrl="#"
         />
         <ProjectsCard
+          className="projectCard"
           imgUrl={cardImg}
           title="blabla"
           description="mvkdfnvjfkbhcdjs"
           githubUrl="#"
         />
         <ProjectsCard
+          className="projectCard"
           imgUrl={cardImg}
           title="blabla"
           description="mvkdfnvjfkbhcdjs"

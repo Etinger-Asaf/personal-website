@@ -1,7 +1,9 @@
 .waves {
   width: 200%;
-  height: 25vh;
   transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .frontWave {
@@ -25,10 +27,15 @@
   }
 }
 .navContainer {
-  background-color: white;
+  background-color: transparent;
   display: flex;
   padding-top: 1rem;
   color: rgb(0, 0, 75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
 }
 .navContainer h1 {
   margin: 0;
@@ -43,8 +50,6 @@
 
 .aboutMeContainer {
   scroll-snap-align: start;
-  width: 90%;
-  height: 100%;
 }
 .aboutMeContainer h1,
 .aboutMeContainer h2 {
@@ -54,10 +59,12 @@
   opacity: 0;
   animation: slide-up ease-in 0.4s forwards;
   margin-top: 0;
+  font-size: 1.7rem;
 }
 .aboutMeContainer h2 {
   opacity: 0;
   animation: slide-up ease-in 0.4s 0.2s forwards;
+  font-size: 1.3rem;
 }
 .aboutMeContainer .pFirst {
   opacity: 0;
@@ -69,14 +76,16 @@
 }
 
 .iconTechContainer {
-  margin-top: 2rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
+  overflow-y: scroll;
 }
 
 .techIcon {
   animation: icon-wave ease-in-out 2.5s forwards;
   opacity: 0;
+  width: 15%;
 }
 
 @keyframes slide-up {
@@ -133,34 +142,94 @@
 
 .projectsContainer {
   scroll-snap-align: start;
-  height: 100%;
-  width: 90%;
 }
 
 .projectFlexContainer {
   display: flex;
-  justify-content: space-evenly;
+  overflow-y: scroll;
+  scroll-snap-type: x mandatory;
 }
 
-.headerAnimation {
-  animation: slide-up-down ease-in-out 2s;
+.projectsHeader {
+  padding: 1rem;
+}
+
+.projectHeaderChar {
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  opacity: 0;
+}
+
+.headerAnimation .projectHeaderChar {
+  animation: slide-up-down ease-in-out 1s forwards;
 }
 
 @keyframes slide-up-down {
-  from, to {
+  from {
     transform: translateY(0);
   }
   30% {
-    transform: translateY(-30%);
+    transform: translateY(-10%);
+    opacity: 1;
   }
   60% {
-    transform: translateY(30%);
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.projectHeaderChar:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.projectHeaderChar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.projectHeaderChar:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.projectHeaderChar:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.projectHeaderChar:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.projectHeaderChar:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.projectHeaderChar:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.projectHeaderChar:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+@media screen and (min-width: 850px) {
+  .projectHeaderChar {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .projectHeaderChar {
+    font-size: 1.7rem;
   }
 }
 .projectsCardContainer {
-  width: 30%;
-  height: 50vh;
+  min-width: 100%;
+  padding: 0 0.5rem;
+  display: block;
   opacity: 0;
+  scroll-snap-align: start;
   animation: fade-in ease-out 10s forwards;
 }
 
@@ -210,6 +279,16 @@
     opacity: 1;
   }
 }
+@media screen and (min-width: 850px) {
+  .projectsCardContainer {
+    min-width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .projectsCardContainer {
+    min-width: 33%;
+  }
+}
 .workContainer {
   scroll-snap-align: start;
 }
@@ -221,21 +300,38 @@
   scroll-snap-align: start;
   flex-direction: column;
   height: 70vh;
+  overflow-x: auto;
 }
 .contactContainer span {
-  font-size: 3rem;
+  font-size: 1rem;
   padding: 1rem;
   visibility: hidden;
 }
 .contactContainer input {
   padding: 1rem;
   background-color: transparent;
-  font-size: 3rem;
+  font-size: 1rem;
   outline: none;
   border: none;
   width: 100%;
 }
 
+@media screen and (min-width: 850px) {
+  .contactContainer span {
+    font-size: 2rem;
+  }
+  .contactContainer input {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contactContainer span {
+    font-size: 3rem;
+  }
+  .contactContainer input {
+    font-size: 3rem;
+  }
+}
 *,
 *::after,
 *::before {
@@ -246,15 +342,18 @@ html {
   margin: 0;
 }
 
+header {
+  height: 25vh;
+  position: relative;
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
   color: white;
-}
-
-header {
-  height: 30vh;
+  font-size: 13px;
+  min-width: 500px;
 }
 
 input,
@@ -281,26 +380,29 @@ h1 {
 .globalContentContainer {
   text-align: left;
   letter-spacing: 1.2;
-  line-height: 1.6;
   margin: auto;
-}
-
-.content {
-  height: 55vh;
-  overflow-y: scroll;
 }
 
 .contentScroll {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 70vh;
+  height: 75vh;
 }
 
 .contentContainer {
-  height: 70vh;
-  margin-bottom: 10px;
-  margin: auto;
+  height: 100%;
+  padding: 0.5rem;
+  margin: 0 auto;
   width: 90%;
+}
+.contentContainer:first-child {
+  padding-top: 0;
+}
+
+@media screen and (min-width: 850px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
