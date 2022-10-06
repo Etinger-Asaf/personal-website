@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import addClassOnViewportEnter from "../../reusable/FN addClassOnIntersection";
 const ProjectCard = ({
   imgUrl,
   title,
@@ -5,8 +7,11 @@ const ProjectCard = ({
   githubUrl,
   deploymenyUrl,
 }) => {
+  const projectsCardRef = useRef();
+  addClassOnViewportEnter(projectsCardRef, "projectsCardAnimation");
+
   return (
-    <div className="projectsCardContainer">
+    <div className="projectsCardContainer" ref={projectsCardRef}>
       <div className="cardTopContainer">
         <img src={imgUrl} className="cardImage" />
       </div>

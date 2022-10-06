@@ -5,7 +5,9 @@
 @use "./components/ProjectsCard//projectCard";
 @use "./components/Work/work";
 @use "./components/Contact/contact";
+@use "./assets/logoSvg/logo";
 
+@import "./variables.scss";
 :root {
   $lightFontColor: white;
   $blueFontColor: rgb(5, 7, 57);
@@ -25,7 +27,6 @@ html {
 }
 header {
   height: 25vh;
-
   position: relative;
 }
 
@@ -33,9 +34,8 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
-  color: white;
-  font-size: 13px;
-  min-width: 500px;
+  color: $baseFontColor;
+  font-size: $mobileBodySizeFont;
 }
 
 input,
@@ -73,7 +73,6 @@ h1 {
 .globalContentContainer {
   text-align: left;
   letter-spacing: 1.2;
-  // line-height: 1.6;
   margin: auto;
 }
 
@@ -94,7 +93,7 @@ h1 {
 
 @media screen and (min-width: 850px) {
   body {
-    font-size: 16px;
+    font-size: $regularBodySizeFont;
   }
 }
 

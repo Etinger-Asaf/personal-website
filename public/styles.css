@@ -1,9 +1,12 @@
 .waves {
   width: 200%;
   transform: translateX(-50%);
-  position: absolute;
-  top: 0;
-  left: 0;
+  max-height: 100%;
+}
+
+.waveSvg {
+  width: 200vw;
+  height: 25vh;
 }
 
 .frontWave {
@@ -26,45 +29,124 @@
     transform: translateX(50%);
   }
 }
-.navContainer {
-  background-color: transparent;
+.navigation {
+  color: #0b132b;
+  width: 100%;
   display: flex;
-  padding-top: 1rem;
-  color: rgb(0, 0, 75);
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  width: 100%;
-}
-.navContainer h1 {
-  margin: 0;
-  padding: 0 2rem;
-}
-.navContainer .navBtnContainer {
-  margin-left: auto;
-}
-.navContainer .navBtnContainer a {
-  padding: 1rem 2rem;
+  padding: 0.5rem 0rem;
 }
 
+.logo {
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.navigation-menu {
+  margin-left: auto;
+}
+.navigation-menu ul {
+  display: flex;
+  padding: 0;
+}
+.navigation-menu li {
+  list-style-type: none;
+  margin: 0 1rem;
+}
+.navigation-menu li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.wavesMenu {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .wavesMenu {
+    display: block;
+  }
+  .navigation-menu ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 73px);
+    background-color: rgba(255, 255, 255, 0.929);
+    border-top: 1px solid #0b132b;
+    display: none;
+  }
+  .navigation-menu ul li {
+    text-align: center;
+    width: 100%;
+  }
+  .navigation-menu ul li a {
+    color: #0b132b;
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .navigation-menu.expended ul {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+    display: block;
+  }
+  .navigation-menu.notExpended ul {
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    display: block;
+  }
+}
+@keyframes menuIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes menuOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
 .aboutMeContainer {
   scroll-snap-align: start;
-}
-.aboutMeContainer h1,
-.aboutMeContainer h2 {
-  font-weight: 600;
 }
 .aboutMeContainer h1 {
   opacity: 0;
   animation: slide-up ease-in 0.4s forwards;
   margin-top: 0;
   font-size: 1.7rem;
+  font-weight: 600;
 }
 .aboutMeContainer h2 {
   opacity: 0;
   animation: slide-up ease-in 0.4s 0.2s forwards;
   font-size: 1.3rem;
+  font-weight: 400;
 }
 .aboutMeContainer .pFirst {
   opacity: 0;
@@ -76,6 +158,7 @@
 }
 
 .iconTechContainer {
+  margin-top: 3rem;
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
@@ -83,9 +166,9 @@
 }
 
 .techIcon {
-  animation: icon-wave ease-in-out 2.5s forwards;
+  animation: icon-wave ease-in-out 1.5s forwards;
   opacity: 0;
-  width: 15%;
+  width: 10%;
 }
 
 @keyframes slide-up {
@@ -142,6 +225,7 @@
 
 .projectsContainer {
   scroll-snap-align: start;
+  max-height: 100%;
 }
 
 .projectFlexContainer {
@@ -155,7 +239,7 @@
 }
 
 .projectHeaderChar {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 600;
   display: inline-block;
   opacity: 0;
@@ -216,7 +300,7 @@
 
 @media screen and (min-width: 850px) {
   .projectHeaderChar {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -225,12 +309,16 @@
   }
 }
 .projectsCardContainer {
+  padding: 0.5rem 1rem;
   min-width: 100%;
-  padding: 0 0.5rem;
   display: block;
+  margin: 0 auto;
   opacity: 0;
   scroll-snap-align: start;
-  animation: fade-in ease-out 10s forwards;
+}
+
+.projectsCardAnimation {
+  animation: cardSlide ease-in-out 0.6s forwards;
 }
 
 .cardTopContainer {
@@ -252,13 +340,17 @@
 
 .cardBottomContainer {
   height: 50%;
-  background-color: grey;
+  background-color: rgb(245, 245, 245);
+  color: #0b132b;
+  padding: 1rem;
   transform: translateY(-50%);
   transition: all 0.2s linear;
   border-radius: 10px;
 }
 .cardBottomContainer h3 {
   margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .projectsCardContainer:hover .cardTopContainer {
@@ -271,14 +363,30 @@
   border-radius: 0 0 10px 10px;
 }
 
-@keyframes fade-in {
+@keyframes cardSlide {
   from {
+    transform: translateY(100%);
+  }
+  60% {
     opacity: 0;
   }
-  80%, to {
+  to {
+    transform: translateX(0);
     opacity: 1;
   }
 }
+.projectsCardContainer:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.projectsCardContainer:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.projectsCardContainer:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
 @media screen and (min-width: 850px) {
   .projectsCardContainer {
     min-width: 50%;
@@ -303,35 +411,45 @@
   overflow-x: auto;
 }
 .contactContainer span {
-  font-size: 1rem;
+  font-size: 16px;
   padding: 1rem;
   visibility: hidden;
 }
 .contactContainer input {
   padding: 1rem;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 16px;
   outline: none;
   border: none;
   width: 100%;
+  opacity: 0;
 }
 
+.inputAnimation {
+  animation: inputIn ease-out 1s forwards;
+}
+
+@keyframes inputIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 850px) {
-  .contactContainer span {
-    font-size: 2rem;
-  }
-  .contactContainer input {
-    font-size: 2rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contactContainer span {
-    font-size: 3rem;
-  }
-  .contactContainer input {
+  .contactContainer span, .contactContainer input {
     font-size: 3rem;
   }
 }
+.top {
+  fill: greenyellow;
+}
+
+.mid {
+  fill: blue;
+}
+
 *,
 *::after,
 *::before {
@@ -353,7 +471,6 @@ body {
   overflow-x: hidden;
   color: white;
   font-size: 13px;
-  min-width: 500px;
 }
 
 input,

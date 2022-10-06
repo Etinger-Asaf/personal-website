@@ -1,9 +1,12 @@
 import { useEffect, useRef } from "react";
 import useElementOnScreen from "../../hooks/useElementOnScreen";
+import addClassOnViewportEnter from "../../reusable/FN addClassOnIntersection";
 const Contact = () => {
   const inputRef = useRef(null);
 
   const isInputVisiable = useElementOnScreen(inputRef);
+
+  addClassOnViewportEnter(inputRef, "inputAnimation");
 
   useEffect(() => {
     if (!isInputVisiable.isIntersecting || inputRef.current === null) return;

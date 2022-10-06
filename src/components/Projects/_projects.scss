@@ -1,5 +1,7 @@
+@import "./../../variables";
 .projectsContainer {
   scroll-snap-align: start;
+  max-height: 100%;
 }
 .projectFlexContainer {
   display: flex;
@@ -11,7 +13,7 @@
 }
 
 .projectHeaderChar {
-  font-size: 1rem;
+  font-size: $headerSize;
   font-weight: 600;
   display: inline-block;
   opacity: 0;
@@ -51,7 +53,7 @@
 
 @media screen and (min-width: 850px) {
   .projectHeaderChar {
-    font-size: 1rem;
+    font-size: $headerSize;
   }
 }
 

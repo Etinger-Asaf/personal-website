@@ -4,7 +4,7 @@ import NavBar from "./components/Navigation";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import WaveSvg from "./components/WaveSvg";
-
+import logoSvg from "./assets/logoSvg/logo.svg";
 const App = () => {
   return (
     <div className="bodyContainer">
@@ -26,6 +26,7 @@ const App = () => {
           <Contact />
         </div>
       </div>
+      {/* <img src={logoSvg} /> */}
     </div>
   );
 };

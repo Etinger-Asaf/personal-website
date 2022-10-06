@@ -1,20 +1,20 @@
+@import "./../../variables";
+
 .aboutMeContainer {
   scroll-snap-align: start;
-  & h1,
-  h2 {
-    font-weight: 600;
-  }
 
   & h1 {
     opacity: 0;
     animation: slide-up ease-in 0.4s forwards;
     margin-top: 0;
     font-size: 1.7rem;
+    font-weight: $headerFontWieght;
   }
   & h2 {
     opacity: 0;
     animation: slide-up ease-in 0.4s 0.2s forwards;
     font-size: 1.3rem;
+    font-weight: $subHeaderFontWieght;
   }
   & .pFirst {
     opacity: 0;
@@ -27,6 +27,7 @@
 }
 
 .iconTechContainer {
+  margin-top: 3rem;
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
@@ -34,9 +35,9 @@
 }
 
 .techIcon {
-  animation: icon-wave ease-in-out 2.5s forwards;
+  animation: icon-wave ease-in-out 1.5s forwards;
   opacity: 0;
-  width: 15%;
+  width: 10%;
 }
 
 @keyframes slide-up {

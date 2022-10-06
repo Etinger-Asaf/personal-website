@@ -1,4 +1,4 @@
-$font-size: 1rem;
+@import "./../../variables";
 
 .contactContainer {
   display: flex;
@@ -10,42 +10,50 @@ $font-size: 1rem;
   overflow-x: auto;
 
   & span {
-    font-size: $font-size;
+    font-size: $regularBodySizeFont;
     padding: 1rem;
-    // opacity: 0;
     visibility: hidden;
   }
 
   & input {
     padding: 1rem;
     background-color: transparent;
-    font-size: $font-size;
+    font-size: $regularBodySizeFont;
     outline: none;
     border: none;
     width: 100%;
+    opacity: 0;
   }
 }
+.inputAnimation {
+  animation: inputIn ease-out 1s forwards;
+}
 
+@keyframes inputIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 // Tablet Screen
 @media screen and (min-width: 850px) {
   .contactContainer {
-    & span {
-      font-size: 2rem;
-    }
+    & span,
     & input {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
 }
 
 // Desktop Screen
 @media screen and (min-width: 1200px) {
-  .contactContainer {
-    & span {
-      font-size: 3rem;
-    }
-    & input {
-      font-size: 3rem;
-    }
-  }
+  // .contactContainer {
+  //   & span,
+  //   & input {
+  //     font-size: 3rem;
+  //   }
+  // }
 }

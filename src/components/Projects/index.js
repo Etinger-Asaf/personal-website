@@ -23,7 +23,6 @@ const mapStr = str.map((el) =>
 
 const Projects = () => {
   const headerRef = useRef();
-
   addClassOnViewportEnter(headerRef, "headerAnimation");
 
   return (
