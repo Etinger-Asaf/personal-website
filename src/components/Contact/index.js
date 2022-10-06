@@ -17,13 +17,13 @@ const Contact = () => {
   return (
     <div className="contactContainer">
       <div>
-        <span>Was it nice? Type your email and get my CV</span>
+        <span>Like what you see? Type your email and get my CV</span>
         <form>
           <input
             ref={inputRef}
             type="email"
             className="contactInput"
-            placeholder="Was it nice? Type your email and get my CV"
+            placeholder="Like what you see? Type your email and get my CV"
           ></input>
         </form>
       </div>

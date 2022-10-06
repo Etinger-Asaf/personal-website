@@ -1,7 +1,9 @@
 import { useState } from "react";
+import NavBtn from "./../NavBtn";
 
-const NavBar = () => {
+const NavBar = ({ aboutMe, projects, work, contact }) => {
   const [isNavExpended, setIsNavExpended] = useState(false);
+
   return (
     <nav className="navigation">
       <a href="/" className="logo">
@@ -31,16 +33,32 @@ const NavBar = () => {
       >
         <ul>
           <li>
-            <a>About Me</a>
+            <NavBtn
+              content="About Me"
+              to={aboutMe}
+              setIsNavExpended={setIsNavExpended}
+            />
           </li>
           <li>
-            <a>Projects</a>
+            <NavBtn
+              content="Projects"
+              to={projects}
+              setIsNavExpended={setIsNavExpended}
+            />
           </li>
           <li>
-            <a>Work</a>
+            <NavBtn
+              content="Work"
+              to={work}
+              setIsNavExpended={setIsNavExpended}
+            />
           </li>
           <li>
-            <a>Contact</a>
+            <NavBtn
+              content="contact"
+              to={contact}
+              setIsNavExpended={setIsNavExpended}
+            />
           </li>
         </ul>
       </div>
@@ -49,49 +67,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-// import { useRef, useState } from "react";
-// const NavBar = () => {
-//   const navMenuRef = useRef();
-
-//   // To open the menu
-//   const mobileMenuDisplayOpenHandler = () => {
-//     if (navMenuRef.current) {
-//       navMenuRef.current.classList.add("menuIn");
-//       navMenuRef.current.classList.remove("menuOut");
-//     }
-//   };
-
-//   // to close the menu
-//   const mobileMenuDisplayCloseHandler = () => {
-//     if (navMenuRef.current) {
-//       navMenuRef.current.classList.remove("menuIn");
-//       navMenuRef.current.classList.add("menuOut");
-//     }
-//   };
-//   return (
-//     <div className="navContainer">
-//       <h1>logo</h1>
-//       <div className="navBtnContainer">
-//         <a href="#">About Me</a>
-//         <a href="#">Projects</a>
-//         <a href="#">Work</a>
-//         <a href="#">contact</a>
-//       </div>
-//       <div className="hiddenMenu">
-//         <button className="navBtn" onClick={mobileMenuDisplayOpenHandler}>
-//           Nav
-//         </button>
-//         <div className="navBtnMenuContainer menuOut" ref={navMenuRef}>
-//           <button onClick={mobileMenuDisplayCloseHandler}>closeNav</button>
-//           <a href="#">About Me</a>
-//           <a href="#">Projects</a>
-//           <a href="#">Work</a>
-//           <a href="#">contact</a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default NavBar;

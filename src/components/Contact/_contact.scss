@@ -43,17 +43,17 @@
   .contactContainer {
     & span,
     & input {
-      font-size: 3rem;
+      font-size: 1.5rem;
     }
   }
 }
 
 // Desktop Screen
-@media screen and (min-width: 1200px) {
-  // .contactContainer {
-  //   & span,
-  //   & input {
-  //     font-size: 3rem;
-  //   }
-  // }
+@media screen and (min-width: 1400px) {
+  .contactContainer {
+    & span,
+    & input {
+      font-size: 3rem;
+    }
+  }
 }

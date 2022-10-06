@@ -62,6 +62,7 @@
   text-decoration: none;
   display: block;
   width: 100%;
+  font-size: 2rem;
 }
 
 .wavesMenu {
@@ -90,6 +91,7 @@
     height: calc(100vh - 73px);
     background-color: rgba(255, 255, 255, 0.929);
     border-top: 1px solid #0b132b;
+    transform: translateX(100%);
     display: none;
   }
   .navigation-menu ul li {
@@ -439,6 +441,11 @@
 }
 @media screen and (min-width: 850px) {
   .contactContainer span, .contactContainer input {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .contactContainer span, .contactContainer input {
     font-size: 3rem;
   }
 }
@@ -450,6 +457,25 @@
   fill: blue;
 }
 
+.navBtn {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0b132b;
+  border-bottom: 2px solid transparent;
+}
+.navBtn:hover {
+  border-bottom: 2px solid #0b132b;
+  transition: all linear 0.05s;
+}
+
+@media screen and (min-width: 850px) {
+  .navBtn {
+    font-size: 16px;
+  }
+}
 *,
 *::after,
 *::before {
