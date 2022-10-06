@@ -5,7 +5,6 @@ import nodeIcon from "../../assets/icons/node.svg";
 import reactIcon from "../../assets/icons/react.svg";
 import sassIcon from "../../assets/icons/sass.svg";
 const AboutMe = () => {
-  // ======================================
   return (
     <div className="globalContentContainer aboutMeContainer">
       <h1>
