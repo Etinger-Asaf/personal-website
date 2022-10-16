@@ -3,10 +3,11 @@
   "name": "personal-website",
   "version": "1.0.0",
   "description": "My own personal website",
-  "gh-pages": "index.html",
-  "private":"false",
+  "main": "index.html",
+  "private": "false",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node docs/index.html",
     "start:dev": "npx parcel public/index.html",
     "start:sass": "sass --watch src/styles.scss public/styles.css "
   },
