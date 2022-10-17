@@ -3,17 +3,22 @@
   "name": "personal-website",
   "version": "1.0.0",
   "description": "My own personal website",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "npx parcel public/index.html",
-    "start:sass": "sass --watch src/styles.scss public/styles.css "
+    "start:dev": "parcel public/index.html",
+    "start:sass": "sass --watch src/styles.scss public/styles.css ",
+    "start:server": "nodemon server.js",
+    "build": "parcel build public/index.html --dist-dir build"
   },
   "author": "Asaf Etinger",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.55.0"
   },
   "devDependencies": {
     "parcel": "^2.7.0",
