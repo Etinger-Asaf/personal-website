@@ -1,11 +1,14 @@
 import { useRef } from "react";
 import addClassOnViewportEnter from "../../reusable/FN addClassOnIntersection";
+import githubSvg from "../../assets/icons/githubSvg.svg";
+import playSvg from "../../assets/icons/playSvg.svg";
 const ProjectCard = ({
   imgUrl,
   title,
   description,
   githubUrl,
   deploymenyUrl,
+  tech,
 }) => {
   const projectsCardRef = useRef();
   addClassOnViewportEnter(projectsCardRef, "projectsCardAnimation");
@@ -18,9 +21,17 @@ const ProjectCard = ({
       <div className="cardBottomContainer">
         <h3>{title}</h3>
         <p>{description}</p>
+        <p>{tech}</p>
+
         <div className="btnContainer">
-          <a href={githubUrl}>github</a>
-          {deploymenyUrl && <a href="#">deployment</a>}
+          <a href={githubUrl}>
+            <img src={githubSvg} alt="github logo"></img>
+          </a>
+          {deploymenyUrl && (
+            <a href={deploymenyUrl}>
+              <img src={playSvg} alt="github logo"></img>
+            </a>
+          )}
         </div>
       </div>
     </div>
