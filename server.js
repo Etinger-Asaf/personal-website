@@ -8,7 +8,6 @@ app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
 
-// app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(cors());
 app.use(express.static(path.join(__dirname, "build")));
 app.get("/", function (req, res, next) {
@@ -25,5 +24,5 @@ app.get("/", function (req, res, next) {
 
 app.get("*", (req, res) => {
   res.json({ message: "hi" });
-  // res.sendFile(path.resolve(__dirname, "../public", "index.html"));
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
