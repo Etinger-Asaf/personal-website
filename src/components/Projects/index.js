@@ -38,7 +38,7 @@ const Projects = () => {
           imgUrl={drawGame}
           title="Darw and Guess"
           description="Two players, one draw a word and the second player guess it."
-          tech="Made with React Redux Socket.io mongoose and mongoDB."
+          tech="Made with React, Redux, Socket.io, mongoose and mongoDB."
           githubUrl="https://github.com/Etinger-Asaf/Draw-And-Guess-2022"
           deploymenyUrl="https://draw-riddle.herokuapp.com/"
         />
@@ -46,8 +46,8 @@ const Projects = () => {
           className="projectCard"
           imgUrl={weatherApp}
           title="Weather App"
-          description="Let you check the weather for the next 5 day by location"
-          tech="Made with React and Redux and accuWeather api"
+          description="Let you check the weather for the next 5 day by location."
+          tech="Made with React, Redux and accuWeather api."
           githubUrl="https://github.com/Etinger-Asaf/Weather-App"
         />
         <ProjectsCard
