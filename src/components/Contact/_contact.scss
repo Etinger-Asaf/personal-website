@@ -8,8 +8,16 @@
   flex-direction: column;
   height: 70vh;
   overflow-x: auto;
+  text-align: center;
 
-  & span {
+  & .inputTitle {
+    font-size: $largerBodyFontSize;
+    padding: 1rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  & .spanToExpenedInput {
     font-size: $regularBodySizeFont;
     padding: 1rem;
     visibility: hidden;
@@ -21,9 +29,34 @@
     font-size: $regularBodySizeFont;
     outline: none;
     border: none;
+    text-align: center;
     width: 100%;
     opacity: 0;
   }
+}
+
+.submitBtn {
+  background-color: transparent;
+  border-radius: $borderRedius;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  margin-top: 2rem;
+  transition: transform 0.3s;
+}
+
+[data-status="success"] {
+  background-color: rgb(10, 236, 10);
+}
+[data-status="pending"] {
+  background-color: pink;
+}
+[data-status="error"] {
+  background-color: red;
+}
+
+.submitBtn:hover {
+  cursor: pointer;
+  transform: scale(1.3);
 }
 .inputAnimation {
   animation: inputIn ease-out 1s forwards;
@@ -41,9 +74,12 @@
 // Tablet Screen
 @media screen and (min-width: 850px) {
   .contactContainer {
-    & span,
+    & .spanToExpenedInput,
     & input {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+    }
+    & .inputTitle {
+      font-size: 1.7rem;
     }
   }
 }
@@ -51,9 +87,12 @@
 // Desktop Screen
 @media screen and (min-width: 1400px) {
   .contactContainer {
-    & span,
+    & .spanToExpenedInput,
     & input {
-      font-size: 3rem;
+      font-size: 2.8rem;
+    }
+    & .inputTitle {
+      font-size: 3.2rem;
     }
   }
 }

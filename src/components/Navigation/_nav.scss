@@ -89,7 +89,7 @@
   .navigation-menu.notExpended ul {
     transform: translateX(100%);
     transition: transform 0.2s ease-in;
-    display: block;
+    display: none;
   }
 }
 

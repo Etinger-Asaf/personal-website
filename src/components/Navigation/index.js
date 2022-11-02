@@ -55,7 +55,7 @@ const NavBar = ({ aboutMe, projects, work, contact }) => {
           </li>
           <li>
             <NavBtn
-              content="contact"
+              content="Contact"
               to={contact}
               setIsNavExpended={setIsNavExpended}
             />

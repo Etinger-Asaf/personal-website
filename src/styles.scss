@@ -27,14 +27,14 @@ html {
   margin: 0;
 }
 header {
-  height: 25vh;
+  height: 20vh;
   position: relative;
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  overflow-x: hidden;
   color: $baseFontColor;
   font-size: $mobileBodySizeFont;
 }
@@ -80,7 +80,7 @@ h1 {
 .contentScroll {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 75vh;
+  height: 80vh;
 }
 .contentContainer {
   height: 100%;

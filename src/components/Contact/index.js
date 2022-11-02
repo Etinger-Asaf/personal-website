@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useElementOnScreen from "../../hooks/useElementOnScreen";
 import addClassOnViewportEnter from "../../reusable/FN addClassOnIntersection";
 const Contact = () => {
   const inputRef = useRef(null);
+  const [requestStatus, setRequestStatus] = useState(null);
 
   const isInputVisiable = useElementOnScreen(inputRef);
 
@@ -11,10 +12,8 @@ const Contact = () => {
   async function submitHandler(e) {
     try {
       e.preventDefault();
+      setRequestStatus("pending");
       if (inputRef.current === undefined) return;
-
-      console.log("this is it", inputRef.current.value);
-
       let fetchURL = "/cv";
 
       const reqOptions = {
@@ -22,9 +21,11 @@ const Contact = () => {
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ emailAddress: inputRef.current.value }),
       };
-
-      await fetch(fetchURL, reqOptions).then((res) => res.json());
+      const res = await fetch(fetchURL, reqOptions);
+      const data = await res.json();
+      setRequestStatus("success");
     } catch (err) {
+      setRequestStatus("error");
       console.error(err);
     }
   }
@@ -38,15 +39,19 @@ const Contact = () => {
   return (
     <div className="contactContainer">
       <div>
-        <span>Like what you see? Type your email and get my CV</span>
+        <p className="inputTitle">Like what you see?</p>
         <form onSubmit={submitHandler}>
           <input
             ref={inputRef}
             type="email"
             className="contactInput"
-            placeholder="Like what you see? Type your email and get my CV"
+            placeholder="Type your email and get my CV"
           ></input>
+          <button data-status={requestStatus} className="submitBtn">
+            SUBMIT
+          </button>
         </form>
+        <p className="spanToExpenedInput">Type your email and get my CV</p>
       </div>
     </div>
   );

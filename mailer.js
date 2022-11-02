@@ -16,7 +16,7 @@ module.exports = main = async (emailAddress) => {
   let info = await transporter.sendMail({
     from: "Asaf Etinger <asafetinger@gmail.com>",
     to: emailAddress,
-    subject: "Asaf Etinger CV",
+    subject: "Asaf Etinger CV - FrontEnd Developer",
     text: "Thank you! Hope to meet you soon!",
     attachments: [
       {
@@ -25,7 +25,5 @@ module.exports = main = async (emailAddress) => {
       },
     ],
   });
-
-  console.log("Message sent: %s", info);
 };
 main().catch(console.error);

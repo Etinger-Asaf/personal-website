@@ -1,7 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import addClassOnViewportEnter from "../../reusable/FN addClassOnIntersection";
 import githubSvg from "../../assets/icons/githubSvg.svg";
 import playSvg from "../../assets/icons/playSvg.svg";
+
 const ProjectCard = ({
   imgUrl,
   title,
@@ -10,15 +11,23 @@ const ProjectCard = ({
   deploymenyUrl,
   tech,
 }) => {
+  const [isCardOpen, setIsCardOpen] = useState(false);
   const projectsCardRef = useRef();
   addClassOnViewportEnter(projectsCardRef, "projectsCardAnimation");
 
+  const changeCardPositionHnadler = () => {
+    setIsCardOpen(!isCardOpen);
+  };
+
   return (
-    <div className="projectsCardContainer" ref={projectsCardRef}>
-      <div className="cardTopContainer">
+    <div
+      className={`projectsCardContainer ${isCardOpen ? "cardIsOpen" : ""}`}
+      ref={projectsCardRef}
+    >
+      <div className="cardTopContainer" onClick={changeCardPositionHnadler}>
         <img src={imgUrl} className="cardImage" />
       </div>
-      <div className="cardBottomContainer">
+      <div className="cardBottomContainer" onClick={changeCardPositionHnadler}>
         <h3>{title}</h3>
         <p>{description}</p>
         <p>{tech}</p>

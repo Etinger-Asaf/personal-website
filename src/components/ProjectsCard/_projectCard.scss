@@ -19,6 +19,7 @@
   transition: all 0.2s ease-in;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 
 .cardImage {
@@ -55,6 +56,22 @@
   }
 }
 
+.cardIsOpen {
+  & .cardTopContainer {
+    transform: translateY(0%);
+  }
+
+  & .cardBottomContainer {
+    transform: translateY(0%);
+    border-radius: 0 0 10px 10px;
+  }
+
+  & .cardImage {
+    border-radius: 10px 10px 0 0;
+  }
+}
+.cardIsClose {
+}
 .projectsCardContainer:hover .cardTopContainer {
   transform: translateY(0%);
 }
@@ -97,6 +114,6 @@
 // Desktop Screen
 @media screen and (min-width: 1200px) {
   .projectsCardContainer {
-    min-width: 33%;
+    min-width: 50%;
   }
 }

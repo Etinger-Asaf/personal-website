@@ -50,13 +50,13 @@ const Projects = () => {
           tech="Made with React, Redux and accuWeather api."
           githubUrl="https://github.com/Etinger-Asaf/Weather-App"
         />
-        <ProjectsCard
+        {/* <ProjectsCard
           className="projectCard"
           imgUrl={landscapeImg}
           title="blabla"
           description="mvkdfnvjfkbhcdjs"
           githubUrl="#"
-        />
+        /> */}
       </div>
     </div>
   );
