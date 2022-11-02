@@ -15,6 +15,10 @@ const Contact = () => {
       setRequestStatus("pending");
       if (inputRef.current === undefined) return;
       let fetchURL = "/cv";
+      // let fetchURL;
+      // process.env.NODE_ENV === "production"
+      //   ? (fetchURL = "https://personal-website-green-gamma.vercel.app/cv")
+      //   : (fetchURL = "/cv");
 
       const reqOptions = {
         method: "POST",
@@ -23,6 +27,7 @@ const Contact = () => {
       };
       const res = await fetch(fetchURL, reqOptions);
       const data = await res.json();
+      console.log(data);
       setRequestStatus("success");
     } catch (err) {
       setRequestStatus("error");

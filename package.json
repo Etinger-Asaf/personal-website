@@ -8,6 +8,7 @@
     "start:dev": "parcel public/index.html",
     "start:sass": "sass --watch src/styles.scss public/styles.css ",
     "start:server": "nodemon server.js",
+    "start": "node server.js",
     "build": "parcel build public/index.html --dist-dir build"
   },
   "author": "Asaf Etinger",

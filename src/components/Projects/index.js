@@ -36,7 +36,7 @@ const Projects = () => {
         <ProjectsCard
           className="projectCard"
           imgUrl={drawGame}
-          title="Darw and Guess"
+          title="Draw and Guess"
           description="Two players, one draw a word and the second player guess it."
           tech="Made with React, Redux, Socket.io, mongoose and mongoDB."
           githubUrl="https://github.com/Etinger-Asaf/Draw-And-Guess-2022"
