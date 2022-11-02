@@ -385,6 +385,17 @@
   border-radius: 10px 10px 0 0;
 }
 
+.cardIsClose .cardTopContainer {
+  transform: translateY(50%);
+}
+.cardIsClose .cardBottomContainer {
+  transform: translateY(-50%);
+  border-radius: 10px;
+}
+.cardIsClose .cardImage {
+  border-radius: 10px;
+}
+
 .projectsCardContainer:hover .cardTopContainer {
   transform: translateY(0%);
 }

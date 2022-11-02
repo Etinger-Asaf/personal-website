@@ -21,7 +21,9 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`projectsCardContainer ${isCardOpen ? "cardIsOpen" : ""}`}
+      className={`projectsCardContainer ${
+        isCardOpen ? "cardIsOpen" : "cardIsClose"
+      }`}
       ref={projectsCardRef}
     >
       <div className="cardTopContainer" onClick={changeCardPositionHnadler}>

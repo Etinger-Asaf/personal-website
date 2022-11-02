@@ -71,6 +71,18 @@
   }
 }
 .cardIsClose {
+  & .cardTopContainer {
+    transform: translateY(50%);
+  }
+
+  & .cardBottomContainer {
+    transform: translateY(-50%);
+    border-radius: $borderRedius;
+  }
+
+  & .cardImage {
+    border-radius: $borderRedius;
+  }
 }
 .projectsCardContainer:hover .cardTopContainer {
   transform: translateY(0%);
