@@ -48,7 +48,7 @@
   background-color: rgb(10, 236, 10);
 }
 [data-status="pending"] {
-  background-color: orange;
+  animation: loadingLightPending infinite alternate 0.3s;
 }
 [data-status="error"] {
   background-color: red;
@@ -69,6 +69,15 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes loadingLightPending {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: orange;
   }
 }
 // Tablet Screen

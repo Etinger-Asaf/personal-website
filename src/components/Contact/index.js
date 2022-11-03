@@ -4,6 +4,7 @@ import addClassOnViewportEnter from "../../reusable/FN addClassOnIntersection";
 const Contact = () => {
   const inputRef = useRef(null);
   const [requestStatus, setRequestStatus] = useState(null);
+  const [inputTitle, setInputTitle] = useState("Like what you see?");
 
   const isInputVisiable = useElementOnScreen(inputRef);
 
@@ -13,12 +14,16 @@ const Contact = () => {
     try {
       e.preventDefault();
       setRequestStatus("pending");
-      if (inputRef.current === undefined) return;
+      if (
+        (inputRef.current.value === undefined) |
+        (inputRef.current.value === "") |
+        !inputRef.current.value.includes("@")
+      ) {
+        setRequestStatus("error");
+        setInputTitle("Something was wrong, Please type again");
+        return;
+      }
       let fetchURL = "/cv";
-      // let fetchURL;
-      // process.env.NODE_ENV === "production"
-      //   ? (fetchURL = "https://personal-website-green-gamma.vercel.app/cv")
-      //   : (fetchURL = "/cv");
 
       const reqOptions = {
         method: "POST",
@@ -26,11 +31,14 @@ const Contact = () => {
         body: JSON.stringify({ emailAddress: inputRef.current.value }),
       };
       const res = await fetch(fetchURL, reqOptions);
+      if (!res.ok) {
+        setRequestStatus("error");
+        return;
+      }
       const data = await res.json();
-      console.log(data);
+      setInputTitle("Great! Thank you!");
       setRequestStatus("success");
     } catch (err) {
-      setRequestStatus("error");
       console.error(err);
     }
   }
@@ -44,7 +52,7 @@ const Contact = () => {
   return (
     <div className="contactContainer">
       <div>
-        <p className="inputTitle">Like what you see?</p>
+        <p className="inputTitle">{inputTitle}</p>
         <form onSubmit={submitHandler}>
           <input
             ref={inputRef}

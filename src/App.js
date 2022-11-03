@@ -12,10 +12,6 @@ const App = () => {
   const workRef = useRef();
   const contactRef = useRef();
 
-  useEffect(() => {
-    console.log(aboutMeRef);
-  }, [aboutMeRef]);
-
   return (
     <div className="bodyContainer">
       <header>

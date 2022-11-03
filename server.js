@@ -25,7 +25,8 @@ app.get("/", function (req, res, next) {
 
 app.post("/cv", function (req, res) {
   try {
-    console.log(req.body);
+    if ((req.body.emailAddress === "") | !req.body.emailAddress.includes("@"))
+      return;
     sendEmail(req.body.emailAddress);
     res.status(200).json({
       status: "success",

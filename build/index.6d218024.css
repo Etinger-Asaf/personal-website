@@ -1,7 +1,7 @@
 .waves {
   width: 200%;
-  transform: translateX(-50%);
   max-height: 100%;
+  transform: translateX(-50%);
 }
 
 .waveSvg {
@@ -10,199 +10,225 @@
 }
 
 .frontWave {
-  animation: wave-slide ease-in-out 7s infinite alternate;
+  animation: wave-slide 7s ease-in-out infinite alternate;
 }
 
 .midWave {
-  animation: wave-slide ease-in-out 8s 0.4s infinite alternate;
+  animation: wave-slide 8s ease-in-out .4s infinite alternate;
 }
 
 .backWave {
-  animation: wave-slide ease-in-out 9s 0.2s infinite alternate;
+  animation: wave-slide 9s ease-in-out .2s infinite alternate;
 }
 
 @keyframes wave-slide {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(50%);
   }
 }
+
 .navigation {
   color: #0b132b;
   width: 100%;
-  display: flex;
+  z-index: 1;
   align-items: center;
+  padding: .5rem 0;
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
-  padding: 0.5rem 0rem;
 }
 
 .logo {
-  text-decoration: none;
-  font-size: 1.3rem;
   margin-left: 1rem;
+  font-size: 1.3rem;
+  text-decoration: none;
 }
 
 .navigation-menu {
   margin-left: auto;
 }
+
 .navigation-menu ul {
-  display: flex;
   padding: 0;
+  display: flex;
 }
+
 .navigation-menu li {
-  list-style-type: none;
   margin: 0 1rem;
+  list-style-type: none;
 }
+
 .navigation-menu li a {
-  text-decoration: none;
-  display: block;
   width: 100%;
   font-size: 2rem;
+  text-decoration: none;
+  display: block;
 }
 
 .wavesMenu {
   height: 50px;
   width: 50px;
-  background-color: transparent;
   cursor: pointer;
-  position: absolute;
+  background-color: #0000;
   border: none;
+  display: none;
+  position: absolute;
   top: 50%;
   right: 25px;
   transform: translateY(-50%);
-  display: none;
 }
 
 @media screen and (max-width: 850px) {
   .wavesMenu {
     display: block;
   }
+
   .navigation-menu ul {
+    width: 100%;
+    height: calc(100vh - 73px);
+    background-color: #ffffffed;
+    border-top: 1px solid #0b132b;
+    flex-direction: column;
+    display: none;
     position: absolute;
     top: 60px;
     left: 0;
-    flex-direction: column;
-    width: 100%;
-    height: calc(100vh - 73px);
-    background-color: rgba(255, 255, 255, 0.929);
-    border-top: 1px solid #0b132b;
     transform: translateX(100%);
-    display: none;
   }
+
   .navigation-menu ul li {
     text-align: center;
     width: 100%;
   }
+
   .navigation-menu ul li a {
     color: #0b132b;
     width: 100%;
+    cursor: pointer;
     padding: 1.5rem 0;
     font-size: 1.5rem;
-    cursor: pointer;
   }
+
   .navigation-menu.expended ul {
-    transform: translateX(0);
-    transition: transform 0.3s ease-out;
+    transition: transform .3s ease-out;
     display: block;
+    transform: translateX(0);
   }
+
   .navigation-menu.notExpended ul {
-    transform: translateX(100%);
-    transition: transform 0.2s ease-in;
+    transition: transform .2s ease-in;
     display: none;
+    transform: translateX(100%);
   }
 }
+
 @keyframes menuIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes menuOut {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
     transform: translateX(100%);
   }
 }
+
 .aboutMeContainer {
   scroll-snap-align: start;
 }
+
 .aboutMeContainer h1 {
   opacity: 0;
-  animation: slide-up ease-in 0.4s forwards;
   margin-top: 0;
   font-size: 1.7rem;
   font-weight: 600;
+  animation: slide-up .4s ease-in forwards;
 }
+
 .aboutMeContainer h2 {
   opacity: 0;
-  animation: slide-up ease-in 0.4s 0.2s forwards;
   font-size: 1.3rem;
   font-weight: 400;
+  animation: slide-up .4s ease-in .2s forwards;
 }
+
 .aboutMeContainer .pFirst {
   opacity: 0;
-  animation: slide-up ease-in 0.4s 0.4s forwards;
+  animation: slide-up .4s ease-in .4s forwards;
 }
+
 .aboutMeContainer .pSecond {
   opacity: 0;
-  animation: slide-up ease-in 0.4s 0.6s forwards;
+  animation: slide-up .4s ease-in .6s forwards;
 }
 
 .iconTechContainer {
+  justify-content: space-between;
   margin-top: 3rem;
   padding: 1rem 0;
   display: flex;
-  justify-content: space-between;
   overflow-y: scroll;
 }
 
 .techIcon {
-  animation: icon-wave ease-in-out 1.5s forwards;
   opacity: 0;
   width: 10%;
+  animation: icon-wave 1.5s ease-in-out forwards;
 }
 
 @keyframes slide-up {
   from {
-    transform: translateY(200%);
     opacity: 0;
+    transform: translateY(200%);
   }
+
   80% {
     opacity: 1;
   }
+
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
+
 @keyframes icon-wave {
   from {
     transform: translateY(0);
   }
+
   30% {
     transform: translateY(-10%);
   }
+
   60% {
     transform: translateY(7%);
   }
+
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
+
 .techIcon:nth-child(1) {
-  animation-delay: 0.5s;
+  animation-delay: .5s;
 }
 
 .techIcon:nth-child(2) {
@@ -232,16 +258,15 @@
 }
 
 .projectFlexContainer {
-  display: flex;
-  overflow-y: scroll;
   scroll-snap-type: x mandatory;
   height: 90%;
+  display: flex;
   overflow-y: hidden;
 }
 
 .projectsHeader {
-  padding: 1rem;
   max-height: 10%;
+  padding: 1rem;
 }
 
 .test {
@@ -249,63 +274,67 @@
 }
 
 .projectHeaderChar {
+  opacity: 0;
   font-size: 2rem;
   font-weight: 600;
   display: inline-block;
-  opacity: 0;
 }
 
 .headerAnimation .projectHeaderChar {
-  animation: slide-up-down ease-in-out 1s forwards;
+  animation: slide-up-down 1s ease-in-out forwards;
 }
 
 @keyframes slide-up-down {
   from {
     transform: translateY(0);
   }
+
   30% {
+    opacity: 1;
     transform: translateY(-10%);
-    opacity: 1;
   }
+
   60% {
-    transform: translateY(10%);
     opacity: 0;
+    transform: translateY(10%);
   }
+
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
+
 .projectHeaderChar:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: .1s;
 }
 
 .projectHeaderChar:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: .2s;
 }
 
 .projectHeaderChar:nth-child(3) {
-  animation-delay: 0.3s;
+  animation-delay: .3s;
 }
 
 .projectHeaderChar:nth-child(4) {
-  animation-delay: 0.4s;
+  animation-delay: .4s;
 }
 
 .projectHeaderChar:nth-child(5) {
-  animation-delay: 0.5s;
+  animation-delay: .5s;
 }
 
 .projectHeaderChar:nth-child(6) {
-  animation-delay: 0.6s;
+  animation-delay: .6s;
 }
 
 .projectHeaderChar:nth-child(7) {
-  animation-delay: 0.7s;
+  animation-delay: .7s;
 }
 
 .projectHeaderChar:nth-child(8) {
-  animation-delay: 0.8s;
+  animation-delay: .8s;
 }
 
 @media screen and (min-width: 850px) {
@@ -313,63 +342,67 @@
     font-size: 2rem;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .projectHeaderChar {
     font-size: 1.7rem;
   }
 }
+
 .projectsCardContainer {
-  padding: 0.5rem 1rem;
   min-width: 100%;
-  display: block;
-  margin: 0 auto;
   opacity: 0;
   max-height: 100%;
   scroll-snap-align: start;
+  margin: 0 auto;
+  padding: .5rem 1rem;
+  display: block;
 }
 
 .projectsCardAnimation {
-  animation: slideProject 1.6s 0.5s ease-out forwards;
+  animation: cardSlide .6s ease-in-out forwards;
 }
 
 .cardTopContainer {
   height: 50%;
-  transform: translateY(50%);
-  transition: all 0.2s ease-in;
-  position: relative;
   z-index: 1;
   cursor: pointer;
+  transition: all .2s ease-in;
+  position: relative;
+  transform: translateY(50%);
 }
 
 .cardImage {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
-  object-fit: cover;
   border-radius: 10px;
 }
 
 .cardBottomContainer {
   height: 50%;
-  background-color: rgb(245, 245, 245);
   color: #0b132b;
+  background-color: #f5f5f5;
+  border-radius: 10px;
   padding: 1rem;
   font-size: 13px;
+  transition: all .2s linear;
   transform: translateY(-50%);
-  transition: all 0.2s linear;
-  border-radius: 10px;
 }
+
 .cardBottomContainer h3 {
   margin: 0;
-  font-weight: 400;
   font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .btnContainer {
   width: 100%;
   height: 30%;
 }
+
 .btnContainer a img {
   height: 100%;
 }
@@ -377,10 +410,12 @@
 .cardIsOpen .cardTopContainer {
   transform: translateY(0%);
 }
+
 .cardIsOpen .cardBottomContainer {
-  transform: translateY(0%);
   border-radius: 0 0 10px 10px;
+  transform: translateY(0%);
 }
+
 .cardIsOpen .cardImage {
   border-radius: 10px 10px 0 0;
 }
@@ -388,10 +423,12 @@
 .cardIsClose .cardTopContainer {
   transform: translateY(50%);
 }
+
 .cardIsClose .cardBottomContainer {
-  transform: translateY(-50%);
   border-radius: 10px;
+  transform: translateY(-50%);
 }
+
 .cardIsClose .cardImage {
   border-radius: 10px;
 }
@@ -405,112 +442,107 @@
 }
 
 .projectsCardContainer:hover .cardBottomContainer {
-  transform: translateY(0%);
   border-radius: 0 0 10px 10px;
+  transform: translateY(0%);
 }
 
-@keyframes slideProject {
-  from {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  50% {
-    transform: translateX(-30%);
-  }
-  60% {
-    opacity: 1;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 @keyframes cardSlide {
   from {
     transform: translateY(100%);
   }
+
   60% {
     opacity: 0;
   }
+
   to {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
 }
+
+.projectsCardContainer:nth-child(1) {
+  animation-delay: .2s;
+}
+
+.projectsCardContainer:nth-child(2) {
+  animation-delay: .4s;
+}
+
+.projectsCardContainer:nth-child(3) {
+  animation-delay: .6s;
+}
+
 @media screen and (min-width: 850px) {
   .projectsCardContainer {
     min-width: 50%;
     font-size: 16px;
   }
-  .projectsCardAnimation {
-    animation: cardSlide 1s forwards;
-  }
-  .projectsCardContainer:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-  .projectsCardContainer:nth-child(2) {
-    animation-delay: 0.4s;
-  }
 }
+
 @media screen and (min-width: 1200px) {
   .projectsCardContainer {
     min-width: 50%;
   }
 }
+
 .workContainer {
   scroll-snap-align: start;
 }
 
 .contactContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   scroll-snap-align: start;
-  flex-direction: column;
   height: 70vh;
-  overflow-x: auto;
   text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow-x: auto;
 }
+
 .contactContainer .inputTitle {
-  font-size: 1.3rem;
-  padding: 1rem;
   width: 100%;
   margin: 0;
+  padding: 1rem;
+  font-size: 1.3rem;
 }
+
 .contactContainer .spanToExpenedInput {
-  font-size: 16px;
-  padding: 1rem;
   visibility: hidden;
-}
-.contactContainer input {
   padding: 1rem;
-  background-color: transparent;
   font-size: 16px;
-  outline: none;
-  border: none;
+}
+
+.contactContainer input {
   text-align: center;
   width: 100%;
   opacity: 0;
+  background-color: #0000;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  font-size: 16px;
 }
 
 .submitBtn {
-  background-color: transparent;
+  background-color: #0000;
+  border: 1px solid #fff;
   border-radius: 10px;
-  padding: 0.5rem 1rem;
-  border: 1px solid white;
   margin-top: 2rem;
-  transition: transform 0.3s;
+  padding: .5rem 1rem;
+  transition: transform .3s;
 }
 
-[data-status=success] {
-  background-color: rgb(10, 236, 10);
+[data-status="success"] {
+  background-color: #0aec0a;
 }
 
-[data-status=pending] {
-  animation: loadingLightPending infinite alternate 0.3s;
+[data-status="pending"] {
+  animation: loadingLight .5s infinite alternate;
 }
 
-[data-status=error] {
+[data-status="error"] {
   background-color: red;
 }
 
@@ -520,61 +552,70 @@
 }
 
 .inputAnimation {
-  animation: inputIn ease-out 1s forwards;
+  animation: inputIn 1s ease-out forwards;
 }
 
 @keyframes inputIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
-@keyframes loadingLightPending {
+
+@keyframes loadingLight {
   from {
-    background-color: transparent;
+    background-color: #0000;
   }
+
   to {
     background-color: orange;
   }
 }
+
 @media screen and (min-width: 850px) {
   .contactContainer .spanToExpenedInput, .contactContainer input {
     font-size: 1.3rem;
   }
+
   .contactContainer .inputTitle {
     font-size: 1.7rem;
   }
 }
+
 @media screen and (min-width: 1400px) {
   .contactContainer .spanToExpenedInput, .contactContainer input {
     font-size: 2.8rem;
   }
+
   .contactContainer .inputTitle {
     font-size: 3.2rem;
   }
 }
+
 .top {
-  fill: greenyellow;
+  fill: #adff2f;
 }
 
 .mid {
-  fill: blue;
+  fill: #00f;
 }
 
 .navBtn {
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: none;
   cursor: pointer;
   color: #0b132b;
-  border-bottom: 2px solid transparent;
+  background-color: #0000;
+  border: none;
+  border-bottom: 2px solid #0000;
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
 }
+
 .navBtn:hover {
   border-bottom: 2px solid #0b132b;
-  transition: all linear 0.05s;
+  transition: all 50ms linear;
 }
 
 @media screen and (min-width: 850px) {
@@ -582,9 +623,8 @@
     font-size: 16px;
   }
 }
-*,
-*::after,
-*::before {
+
+*, :after, :before {
   box-sizing: border-box;
 }
 
@@ -598,19 +638,16 @@ header {
 }
 
 body {
-  overflow-x: hidden;
+  color: #fff;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: white;
+  font-family: Montserrat, sans-serif;
   font-size: 13px;
+  overflow-x: hidden;
 }
 
-input,
-button,
-a,
-textarea {
-  font-family: inherit;
+input, button, a, textarea {
   color: inherit;
+  font-family: inherit;
 }
 
 a {
@@ -623,27 +660,28 @@ h1 {
 
 .bodyContainer {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, #6fffe9, rgba(91, 192, 190, 0.8), #3a506b, #1c2541, #0b132b, #040812);
+  background-image: linear-gradient(#6fffe9, #5bc0becc, #3a506b, #1c2541, #0b132b, #040812);
 }
 
 .globalContentContainer {
   text-align: left;
-  letter-spacing: 1.2;
+  letter-spacing: 1.2px;
   margin: auto;
 }
 
 .contentScroll {
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
   height: 80vh;
+  overflow-y: scroll;
 }
 
 .contentContainer {
   height: 100%;
-  padding: 0.5rem;
-  margin: 0 auto;
   width: 90%;
+  margin: 0 auto;
+  padding: .5rem;
 }
+
 .contentContainer:first-child {
   padding-top: 0;
 }
@@ -654,4 +692,4 @@ h1 {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=index.6d218024.css.map */

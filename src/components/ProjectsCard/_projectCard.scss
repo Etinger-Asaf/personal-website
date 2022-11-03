@@ -10,7 +10,7 @@
   scroll-snap-align: start;
 }
 .projectsCardAnimation {
-  animation: cardSlide ease-in-out 0.6s forwards;
+  animation: slideProject 1.6s 0.5s ease-out forwards;
 }
 
 .cardTopContainer {
@@ -95,6 +95,23 @@
   border-radius: 0 0 10px 10px;
 }
 
+@keyframes slideProject {
+  from {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @keyframes cardSlide {
   from {
     transform: translateY(100%);
@@ -108,18 +125,21 @@
   }
 }
 
-@for $i from 1 through 3 {
-  .projectsCardContainer {
-    &:nth-child(#{$i}) {
-      animation-delay: $i * (0.2s);
-    }
-  }
-}
-
 @media screen and (min-width: 850px) {
   .projectsCardContainer {
     min-width: 50%;
     font-size: $regularBodySizeFont;
+  }
+  .projectsCardAnimation {
+    animation: cardSlide 1s forwards;
+  }
+
+  @for $i from 1 through 2 {
+    .projectsCardContainer {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * (0.2s);
+      }
+    }
   }
 }
 
