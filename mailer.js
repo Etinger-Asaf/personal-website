@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-module.exports = main = async (emailAddress) => {
+module.exports = async (emailAddress) => {
   if (emailAddress === undefined) return;
 
   let transporter = nodemailer.createTransport({
@@ -13,7 +13,7 @@ module.exports = main = async (emailAddress) => {
     },
   });
 
-  let info = await transporter.sendMail({
+  let res = await transporter.sendMail({
     from: "Asaf Etinger <asafetinger@gmail.com>",
     to: emailAddress,
     subject: "Asaf Etinger CV - FrontEnd Developer",
@@ -25,5 +25,6 @@ module.exports = main = async (emailAddress) => {
       },
     ],
   });
+
+  return res;
 };
-main().catch(console.error);

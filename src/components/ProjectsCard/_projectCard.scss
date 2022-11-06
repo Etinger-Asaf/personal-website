@@ -51,9 +51,17 @@
 .btnContainer {
   width: 100%;
   height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
   & a img {
     height: 100%;
   }
+}
+
+.btnCard {
+  text-align: center;
+  width: 45%;
 }
 
 .cardIsOpen {
@@ -147,5 +155,8 @@
 @media screen and (min-width: 1200px) {
   .projectsCardContainer {
     min-width: 50%;
+  }
+  .largeIconsTechContainer {
+    visibility: hidden;
   }
 }

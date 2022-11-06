@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavBtn from "./../NavBtn";
 
-const NavBar = ({ aboutMe, projects, work, contact }) => {
+const NavBar = ({ intro, projects, aboutMe, contact }) => {
   const [isNavExpended, setIsNavExpended] = useState(false);
 
   return (
@@ -34,8 +34,8 @@ const NavBar = ({ aboutMe, projects, work, contact }) => {
         <ul>
           <li>
             <NavBtn
-              content="About Me"
-              to={aboutMe}
+              content="Intro"
+              to={intro}
               setIsNavExpended={setIsNavExpended}
             />
           </li>
@@ -48,8 +48,8 @@ const NavBar = ({ aboutMe, projects, work, contact }) => {
           </li>
           <li>
             <NavBtn
-              content="Work"
-              to={work}
+              content="About Me"
+              to={aboutMe}
               setIsNavExpended={setIsNavExpended}
             />
           </li>

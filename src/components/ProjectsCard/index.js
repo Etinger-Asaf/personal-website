@@ -16,6 +16,7 @@ const ProjectCard = ({
   addClassOnViewportEnter(projectsCardRef, "projectsCardAnimation");
 
   const changeCardPositionHnadler = () => {
+    console.log("touch");
     setIsCardOpen(!isCardOpen);
   };
 
@@ -35,13 +36,17 @@ const ProjectCard = ({
         <p>{tech}</p>
 
         <div className="btnContainer">
-          <a href={githubUrl}>
-            <img src={githubSvg} alt="github logo"></img>
-          </a>
-          {deploymenyUrl && (
-            <a href={deploymenyUrl}>
-              <img src={playSvg} alt="github logo"></img>
+          <div className="btnCard">
+            <a href={githubUrl}>
+              <img src={githubSvg} alt="github logo"></img>
             </a>
+          </div>
+          {deploymenyUrl && (
+            <div className="btnCard">
+              <a href={deploymenyUrl}>
+                <img src={playSvg} alt="github logo"></img>
+              </a>
+            </div>
           )}
         </div>
       </div>

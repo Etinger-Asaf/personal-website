@@ -23,11 +23,12 @@ app.get("/", function (req, res, next) {
   }
 });
 
-app.post("/cv", function (req, res) {
+app.post("/cv", async function (req, res) {
   try {
     if ((req.body.emailAddress === "") | !req.body.emailAddress.includes("@"))
       return;
-    sendEmail(req.body.emailAddress);
+    const emailStatus = await sendEmail(req.body.emailAddress);
+    console.log(emailStatus);
     res.status(200).json({
       status: "success",
       body: "success",

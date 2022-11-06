@@ -92,7 +92,8 @@
     background-color: rgba(255, 255, 255, 0.929);
     border-top: 1px solid #0b132b;
     transform: translateX(100%);
-    display: none;
+    transition: all 0.5s ease-in-out;
+    visibility: hidden;
   }
   .navigation-menu ul li {
     text-align: center;
@@ -107,13 +108,11 @@
   }
   .navigation-menu.expended ul {
     transform: translateX(0);
-    transition: transform 0.3s ease-out;
-    display: block;
+    visibility: visible;
   }
   .navigation-menu.notExpended ul {
     transform: translateX(100%);
-    transition: transform 0.2s ease-in;
-    display: none;
+    visibility: hidden;
   }
 }
 @keyframes menuIn {
@@ -123,6 +122,7 @@
   to {
     opacity: 1;
     transform: translateX(0);
+    display: block;
   }
 }
 @keyframes menuOut {
@@ -134,29 +134,42 @@
     transform: translateX(100%);
   }
 }
-.aboutMeContainer {
+.introContainer {
   scroll-snap-align: start;
 }
-.aboutMeContainer h1 {
+.introContainer h1 {
   opacity: 0;
   animation: slide-up ease-in 0.4s forwards;
   margin-top: 0;
-  font-size: 1.7rem;
+  font-size: 2.5rem;
   font-weight: 600;
 }
-.aboutMeContainer h2 {
+.introContainer h2 {
   opacity: 0;
   animation: slide-up ease-in 0.4s 0.2s forwards;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 400;
 }
-.aboutMeContainer .pFirst {
-  opacity: 0;
-  animation: slide-up ease-in 0.4s 0.4s forwards;
+
+.largeIconsTechContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
 }
-.aboutMeContainer .pSecond {
-  opacity: 0;
-  animation: slide-up ease-in 0.4s 0.6s forwards;
+.largeIconsTechContainer h3 {
+  font-weight: 400;
+}
+
+.largeIconsTechContainer > * {
+  text-align: center;
+}
+
+.larghTechIcon {
+  width: 90%;
+}
+
+.largeIconsDiv > * {
+  animation: slide-up 1s forwards;
 }
 
 .iconTechContainer {
@@ -165,6 +178,10 @@
   display: flex;
   justify-content: space-between;
   overflow-y: scroll;
+}
+
+.reactAndNodeSmallIcons {
+  display: none;
 }
 
 .techIcon {
@@ -202,29 +219,43 @@
   }
 }
 .techIcon:nth-child(1) {
-  animation-delay: 0.5s;
+  animation-delay: 0.3333333333s;
 }
 
 .techIcon:nth-child(2) {
-  animation-delay: 1s;
+  animation-delay: 0.6666666667s;
 }
 
 .techIcon:nth-child(3) {
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 
 .techIcon:nth-child(4) {
-  animation-delay: 2s;
+  animation-delay: 1.3333333333s;
 }
 
 .techIcon:nth-child(5) {
-  animation-delay: 2.5s;
+  animation-delay: 1.6666666667s;
 }
 
 .techIcon:nth-child(6) {
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 
+@media screen and (min-width: 850px) {
+  .reactAndNodeSmallIcons {
+    display: block;
+  }
+  .largeIconsTechContainer {
+    display: none;
+  }
+  .introContainer h2 {
+    font-size: 3rem;
+  }
+  .introContainer h2:nth-child(3) {
+    margin-bottom: 5rem;
+  }
+}
 .projectsContainer {
   scroll-snap-align: start;
   height: 70vh;
@@ -369,9 +400,17 @@
 .btnContainer {
   width: 100%;
   height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
 }
 .btnContainer a img {
   height: 100%;
+}
+
+.btnCard {
+  text-align: center;
+  width: 45%;
 }
 
 .cardIsOpen .cardTopContainer {
@@ -456,9 +495,53 @@
   .projectsCardContainer {
     min-width: 50%;
   }
+  .largeIconsTechContainer {
+    visibility: hidden;
+  }
 }
-.workContainer {
+.aboutMeContainer {
   scroll-snap-align: start;
+}
+.aboutMeContainer > * {
+  opacity: 0;
+}
+
+.aboutMeEnterAnimtaion > * {
+  animation: slideInP 0.5s forwards;
+}
+
+@keyframes slideInP {
+  from {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.aboutMeContainer *:nth-child(1) {
+  animation-delay: 0.3333333333s;
+}
+
+.aboutMeContainer *:nth-child(2) {
+  animation-delay: 0.6666666667s;
+}
+
+.aboutMeContainer *:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.aboutMeContainer *:nth-child(4) {
+  animation-delay: 1.3333333333s;
+}
+
+.aboutMeContainer *:nth-child(5) {
+  animation-delay: 1.6666666667s;
+}
+
+.aboutMeContainer *:nth-child(6) {
+  animation-delay: 2s;
 }
 
 .contactContainer {
