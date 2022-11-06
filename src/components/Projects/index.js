@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import ProjectsCard from "../ProjectsCard";
 import addClassOnViewportEnter from "../../reusable/FN addClassOnIntersection";
-import landscapeImg from "../../assets/images/landscape.jpeg";
 import drawGame from "../../assets/images/drawGame.png";
 import weatherApp from "../../assets/images/weatherApp.jpeg";
 
@@ -37,7 +36,7 @@ const Projects = () => {
           className="projectCard"
           imgUrl={drawGame}
           title="Draw and Guess"
-          description="Two players, one draw a word and the second player guess it."
+          description="Two players. One player draws a word and the second player guesses it."
           tech="Made with React, Redux, Socket.io, mongoose and mongoDB."
           githubUrl="https://github.com/Etinger-Asaf/Draw-And-Guess-2022"
           deploymenyUrl="https://draw-riddle.herokuapp.com/"
@@ -46,17 +45,10 @@ const Projects = () => {
           className="projectCard"
           imgUrl={weatherApp}
           title="Weather App"
-          description="Let you check the weather for the next 5 day by location."
+          description="You can check the weather for the next 5 days by location."
           tech="Made with React, Redux and accuWeather api."
           githubUrl="https://github.com/Etinger-Asaf/Weather-App"
         />
-        {/* <ProjectsCard
-          className="projectCard"
-          imgUrl={landscapeImg}
-          title="blabla"
-          description="mvkdfnvjfkbhcdjs"
-          githubUrl="#"
-        /> */}
       </div>
     </div>
   );

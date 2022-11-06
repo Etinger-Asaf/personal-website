@@ -8,19 +8,19 @@ const AboutMe = () => {
     <div className="aboutMeContainer" ref={aboutMeRef}>
       <h1 className="aboutMeContent">About Me</h1>
       <p className="aboutMeContent">
-        I first came across web development about a year ago and it was a match!
+        About a year ago, I discovered web development and was instantly hooked!
       </p>
       <p className="aboutMeContent">
-        Loved it and have been learning since then.
+        I loved it and have been learning ever since.
       </p>
       <p className="aboutMeContent">
         I have always been a person who enjoys stylish and sleek designs.
       </p>
       <p className="aboutMeContent">
-        Creativity and aesthetic are part of me, from being a tattoo artist to
-        creating web designs.
+        From tattooing to creating websites, creativity and aesthetics are part
+        of who I am.
       </p>
-      <p>and I just enjoy creating things that live on the internet!</p>
+      <p>It's just fun to create things that live online for me!</p>
     </div>
   );
 };

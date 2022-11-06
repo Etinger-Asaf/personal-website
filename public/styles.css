@@ -177,7 +177,6 @@
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
-  overflow-y: scroll;
 }
 
 .reactAndNodeSmallIcons {
@@ -673,6 +672,7 @@
 
 html {
   margin: 0;
+  overflow-y: hidden;
 }
 
 header {
