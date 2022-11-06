@@ -168,7 +168,7 @@
   width: 90%;
 }
 
-.largeIconsDiv > * {
+.largeIconsDiv {
   animation: slide-up 1s forwards;
 }
 
@@ -399,7 +399,7 @@
 
 .btnContainer {
   width: 100%;
-  height: 30%;
+  height: 25%;
   display: flex;
   justify-content: space-evenly;
   margin-top: 1rem;
