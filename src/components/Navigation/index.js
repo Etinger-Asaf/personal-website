@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavBtn from "./../NavBtn";
-import logo from "./../../assets/logoSvg/logo.svg";
-
+import linkedin from "../../assets/icons/linkedin.svg";
+import github from "../../assets/icons/githubSvg.svg";
 const NavBar = ({ intro, projects, aboutMe, contact }) => {
   const [isNavExpended, setIsNavExpended] = useState(false);
 
@@ -116,6 +116,14 @@ const NavBar = ({ intro, projects, aboutMe, contact }) => {
               setIsNavExpended={setIsNavExpended}
             />
           </li>
+          <div className="socialBtn">
+            <a href="https://www.linkedin.com/in/asaf-etinger-09b72a233/">
+              <img src={linkedin} alt="linkedin"></img>
+            </a>
+            <a href="https://github.com/Etinger-Asaf">
+              <img src={github} alt="github"></img>
+            </a>
+          </div>
         </ul>
       </div>
     </nav>

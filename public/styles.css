@@ -73,6 +73,18 @@
   font-size: 2rem;
 }
 
+.socialBtn {
+  display: flex;
+}
+.socialBtn > * {
+  width: 50%;
+}
+.socialBtn > * img {
+  padding: 3.5rem;
+  width: 100%;
+  object-fit: contain;
+}
+
 .wavesMenu {
   height: 50px;
   width: 50px;
@@ -121,6 +133,11 @@
   .navigation-menu.notExpended ul {
     transform: translateX(100%);
     visibility: hidden;
+  }
+}
+@media screen and (min-width: 850px) {
+  .socialBtn > * img {
+    display: none;
   }
 }
 @keyframes menuIn {
@@ -703,6 +720,7 @@
 html {
   margin: 0;
   overflow-y: hidden;
+  height: 100vh;
 }
 
 header {

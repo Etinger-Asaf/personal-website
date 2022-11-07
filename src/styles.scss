@@ -5,7 +5,6 @@
 @use "./components/ProjectsCard/projectCard";
 @use "./components/AboutMe/aboutMe";
 @use "./components/Contact/contact";
-@use "./assets/logoSvg/logo";
 @use "./components/NavBtn/navBtn";
 
 @import "./variables.scss";
@@ -26,6 +25,7 @@
 html {
   margin: 0;
   overflow-y: hidden;
+  height: 100vh;
 }
 header {
   height: 20vh;

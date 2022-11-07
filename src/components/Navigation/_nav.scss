@@ -48,6 +48,20 @@
   }
 }
 
+.socialBtn {
+  display: flex;
+
+  & > * {
+    width: 50%;
+  }
+
+  & > * img {
+    padding: 3.5rem;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
 .wavesMenu {
   height: 50px;
   width: 50px;
@@ -106,7 +120,10 @@
 }
 
 // Desktop Screen
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 850px) {
+  .socialBtn > * img {
+    display: none;
+  }
 }
 
 @keyframes menuIn {
