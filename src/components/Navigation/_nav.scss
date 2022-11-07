@@ -13,9 +13,18 @@
 }
 
 .logo {
-  text-decoration: none;
-  font-size: 1.3rem;
-  margin-left: 1rem;
+  width: 100px;
+  height: 100%;
+}
+
+// Logo svg
+.top,
+.bottom {
+  animation: topAndBottomAnimation 4s ease-in-out forwards alternate infinite;
+}
+
+.mid {
+  animation: midLogoAnimation 4s forwards ease-in-out alternate infinite;
 }
 
 .navigation-menu {
@@ -117,5 +126,36 @@
   to {
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+
+@keyframes midLogoAnimation {
+  from {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-7.5%);
+  }
+
+  to {
+    transform: translateX(-7.5%);
+  }
+}
+
+@keyframes topAndBottomAnimation {
+  from {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
   }
 }

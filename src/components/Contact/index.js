@@ -20,7 +20,7 @@ const Contact = () => {
         !inputRef.current.value.includes("@")
       ) {
         setRequestStatus("error");
-        setInputTitle("Something was wrong, Please type again");
+        setInputTitle("Something went wrong, Please type again.");
         return;
       }
       let fetchURL = "/cv";

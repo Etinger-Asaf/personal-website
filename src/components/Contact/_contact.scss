@@ -42,7 +42,26 @@
   border: 1px solid white;
   margin-top: 2rem;
   transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
 }
+
+// .submitBtn::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: white;
+//   transform: translateX(-100%);
+//   transition: all 1s;
+//   z-index: -1;
+// }
+
+// .submitBtn:hover::before {
+//   transform: translateX(0);
+// }
 
 [data-status="success"] {
   background-color: rgb(10, 236, 10);
@@ -56,6 +75,7 @@
 
 .submitBtn:hover {
   cursor: pointer;
+  // color: rgb(5, 7, 57);
   transform: scale(1.3);
 }
 .inputAnimation {

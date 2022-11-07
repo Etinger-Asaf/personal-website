@@ -11,7 +11,6 @@
   scroll-snap-type: x mandatory;
   height: 90%;
   overflow-y: hidden;
-  // animation: slideProject 2s;
 }
 .projectsHeader {
   padding: 1rem;
@@ -23,7 +22,7 @@
 }
 
 .projectHeaderChar {
-  font-size: $headerSize;
+  font-size: $largerBodyFontSize;
   font-weight: 600;
   display: inline-block;
   opacity: 0;
@@ -61,25 +60,12 @@
   }
 }
 
-// @keyframes slideProject {
-//   from,
-//   to {
-//     transform: translateX(0);
-//   }
-//   50% {
-//     transform: translateX(-50%);
-//   }
-// }
-
 @media screen and (min-width: 850px) {
   .projectHeaderChar {
-    font-size: $headerSize;
+    font-size: $largerBodyFontSize;
   }
 }
 
 // Desktop Screen
 @media screen and (min-width: 1200px) {
-  .projectHeaderChar {
-    font-size: 1.7rem;
-  }
 }

@@ -16,7 +16,6 @@ const ProjectCard = ({
   addClassOnViewportEnter(projectsCardRef, "projectsCardAnimation");
 
   const changeCardPositionHnadler = () => {
-    console.log("touch");
     setIsCardOpen(!isCardOpen);
   };
 

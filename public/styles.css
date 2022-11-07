@@ -42,9 +42,17 @@
 }
 
 .logo {
-  text-decoration: none;
-  font-size: 1.3rem;
-  margin-left: 1rem;
+  width: 100px;
+  height: 100%;
+}
+
+.top,
+.bottom {
+  animation: topAndBottomAnimation 4s ease-in-out forwards alternate infinite;
+}
+
+.mid {
+  animation: midLogoAnimation 4s forwards ease-in-out alternate infinite;
 }
 
 .navigation-menu {
@@ -132,6 +140,34 @@
   to {
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+@keyframes midLogoAnimation {
+  from {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-7.5%);
+  }
+  to {
+    transform: translateX(-7.5%);
+  }
+}
+@keyframes topAndBottomAnimation {
+  from {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
   }
 }
 .introContainer {
@@ -343,11 +379,6 @@
     font-size: 2rem;
   }
 }
-@media screen and (min-width: 1200px) {
-  .projectHeaderChar {
-    font-size: 1.7rem;
-  }
-}
 .projectsCardContainer {
   padding: 0.5rem 1rem;
   min-width: 100%;
@@ -543,6 +574,11 @@
   animation-delay: 2s;
 }
 
+@media screen and (min-width: 850px) {
+  .aboutMeContainer p {
+    font-size: 1.5rem;
+  }
+}
 .contactContainer {
   display: flex;
   align-items: center;
@@ -554,7 +590,7 @@
   text-align: center;
 }
 .contactContainer .inputTitle {
-  font-size: 1.3rem;
+  font-size: 2rem;
   padding: 1rem;
   width: 100%;
   margin: 0;
@@ -582,6 +618,8 @@
   border: 1px solid white;
   margin-top: 2rem;
   transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 [data-status=success] {
@@ -637,14 +675,6 @@
     font-size: 3.2rem;
   }
 }
-.top {
-  fill: greenyellow;
-}
-
-.mid {
-  fill: blue;
-}
-
 .navBtn {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
