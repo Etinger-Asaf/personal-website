@@ -2,6 +2,7 @@
 
 .projectsCardContainer {
   padding: 0.5rem 1rem;
+  font-size: 11px;
   min-width: 100%;
   display: block;
   margin: 0 auto;
@@ -36,7 +37,7 @@
   background-color: rgb(245, 245, 245);
   color: $navFontColor;
   padding: 1rem;
-  font-size: $mobileBodySizeFont;
+  font-size: inherit;
   transform: translateY(-50%);
   transition: all 0.2s linear;
   border-radius: $borderRedius;
@@ -44,7 +45,7 @@
   & h3 {
     margin: 0;
     font-weight: $subHeaderFontWieght;
-    font-size: $subHeaderSize;
+    font-size: $regularBodySizeFont;
   }
 }
 
