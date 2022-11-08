@@ -1,12 +1,9 @@
 .waves {
-  width: 200%;
   transform: translateX(-50%);
-  max-height: 100%;
 }
 
 .waveSvg {
-  width: 200vw;
-  // max-height: 19vh;
+  width: 200%;
 }
 
 .frontWave {
@@ -22,10 +19,11 @@
 }
 
 @keyframes wave-slide {
-  from {
+  from,
+  to {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(50%);
+  50% {
+    transform: translateX(25%);
   }
 }

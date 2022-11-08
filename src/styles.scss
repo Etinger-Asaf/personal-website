@@ -25,14 +25,15 @@
 html {
   margin: 0;
   overflow-y: hidden;
+  border: red solid 2px;
 }
 header {
-  height: 15vh;
   position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 body {
-  overflow-x: hidden;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: $baseFontColor;
@@ -79,12 +80,13 @@ h1 {
 .contentScroll {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 85vh;
+  height: 84vh;
 }
 .contentContainer {
-  height: 100%;
+  scroll-snap-align: end;
+  height: 83vh;
   padding: 0.5rem;
-  margin: 0 auto;
+  margin: auto;
   width: 90%;
   &:first-child {
     padding-top: 0;
