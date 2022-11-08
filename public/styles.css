@@ -6,7 +6,7 @@
 
 .waveSvg {
   width: 200vw;
-  height: 20vh;
+  max-height: 19vh;
 }
 
 .frontWave {
@@ -557,6 +557,42 @@
   animation: slideInP 0.5s forwards;
 }
 
+.socialBtnContainer {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  margin-top: 4rem;
+}
+
+.aboutMeSocialBtn {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.aboutMeSocialBtn a img {
+  height: 100%;
+  padding: 1rem;
+}
+
+.aboutMeSocialBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  opacity: 0.1;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.aboutMeSocialBtn:hover::before {
+  opacity: 1;
+}
+
 @keyframes slideInP {
   from {
     opacity: 0;
@@ -594,6 +630,12 @@
 @media screen and (min-width: 850px) {
   .aboutMeContainer p {
     font-size: 1.5rem;
+  }
+  .aboutMeSocialBtn {
+    width: 25%;
+  }
+  .aboutMeSocialBtn:first-child {
+    margin-right: 2rem;
   }
 }
 .contactContainer {
@@ -724,7 +766,7 @@ html {
 }
 
 header {
-  height: 20vh;
+  height: 19vh;
   position: relative;
 }
 

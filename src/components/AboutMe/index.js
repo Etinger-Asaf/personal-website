@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import addClassOnViewportEnter from "./../../reusable/FN addClassOnIntersection";
+import github from "./../../assets/icons/githubSvg.svg";
+import linkedin from "../../assets/icons/linkedin.svg";
 const AboutMe = () => {
   const aboutMeRef = useRef();
 
@@ -21,6 +23,18 @@ const AboutMe = () => {
         of who I am.
       </p>
       <p>It's just fun to create things that live online for me!</p>
+      <div className="socialBtnContainer">
+        <div className="aboutMeSocialBtn">
+          <a href="https://www.linkedin.com/in/asaf-etinger-09b72a233/">
+            <img src={linkedin} alt="linkedin"></img>
+          </a>
+        </div>
+        <div className="aboutMeSocialBtn">
+          <a href="https://github.com/Etinger-Asaf">
+            <img src={github} alt="github"></img>
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
