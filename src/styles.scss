@@ -28,7 +28,7 @@ html {
   height: 100vh;
 }
 header {
-  height: 19vh;
+  height: 15vh;
   position: relative;
 }
 
@@ -59,7 +59,7 @@ h1 {
 // Layout styles
 
 .bodyContainer {
-  min-height: 100vh; //After more content will be add I can remove this.
+  // height: 100vh; //After more content will be add I can remove this.
   background-image: linear-gradient(
     to bottom,
     #6fffe9,
@@ -80,7 +80,7 @@ h1 {
 .contentScroll {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 80vh;
+  height: 85vh;
 }
 .contentContainer {
   height: 100%;

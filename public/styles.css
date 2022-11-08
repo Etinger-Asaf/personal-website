@@ -6,7 +6,6 @@
 
 .waveSvg {
   width: 200vw;
-  max-height: 19vh;
 }
 
 .frontWave {
@@ -323,7 +322,7 @@
 }
 
 .projectsHeader {
-  padding: 1rem;
+  padding: 0 1rem;
   max-height: 10%;
 }
 
@@ -560,8 +559,9 @@
 
 .socialBtnContainer {
   height: 15vh;
-  width: 100%;
+  width: 90%;
   display: flex;
+  margin: auto;
   margin-top: 4rem;
 }
 
@@ -569,6 +569,7 @@
   position: relative;
   width: 100%;
   text-align: center;
+  margin: 0 5px;
 }
 
 .aboutMeSocialBtn a img {
@@ -767,7 +768,7 @@ html {
 }
 
 header {
-  height: 19vh;
+  height: 15vh;
   position: relative;
 }
 
@@ -796,7 +797,6 @@ h1 {
 }
 
 .bodyContainer {
-  min-height: 100vh;
   background-image: linear-gradient(to bottom, #6fffe9, rgba(91, 192, 190, 0.8), #3a506b, #1c2541, #0b132b, #040812);
 }
 
@@ -809,7 +809,7 @@ h1 {
 .contentScroll {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 80vh;
+  height: 85vh;
 }
 
 .contentContainer {
