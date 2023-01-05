@@ -21,15 +21,16 @@ const ProjectCard = ({
 
   return (
     <div
+      onClick={changeCardPositionHnadler}
       className={`projectsCardContainer ${
         isCardOpen ? "cardIsOpen" : "cardIsClose"
       }`}
       ref={projectsCardRef}
     >
-      <div className="cardTopContainer" onClick={changeCardPositionHnadler}>
+      <div className="cardTopContainer">
         <img src={imgUrl} className="cardImage" />
       </div>
-      <div className="cardBottomContainer" onClick={changeCardPositionHnadler}>
+      <div className="cardBottomContainer">
         <h3>{title}</h3>
         <p>{description}</p>
         <p>{tech}</p>

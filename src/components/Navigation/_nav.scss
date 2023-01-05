@@ -108,14 +108,10 @@
   .navigation-menu.expended ul {
     transform: translateX(0);
     visibility: visible;
-    // display: block;
-    // animation: menuIn 0.3s forwards ease-in;
   }
   .navigation-menu.notExpended ul {
     transform: translateX(100%);
     visibility: hidden;
-    // display: none;
-    // transition: transform 0.2s ease-in;
   }
 }
 

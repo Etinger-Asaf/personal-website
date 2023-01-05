@@ -4,6 +4,7 @@
 
 .waveSvg {
   width: 200%;
+  max-height: 20vh;
 }
 
 .frontWave {
@@ -762,11 +763,10 @@
 html {
   margin: 0;
   overflow-y: hidden;
-  border: red solid 2px;
 }
 
 header {
-  position: relative;
+  max-height: 16vh;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -795,6 +795,7 @@ h1 {
 }
 
 .bodyContainer {
+  max-height: 100vh;
   background-image: linear-gradient(to bottom, #6fffe9, rgba(91, 192, 190, 0.8), #3a506b, #1c2541, #0b132b, #040812);
 }
 

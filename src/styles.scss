@@ -25,10 +25,9 @@
 html {
   margin: 0;
   overflow-y: hidden;
-  border: red solid 2px;
 }
 header {
-  position: relative;
+  max-height: 16vh;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -60,6 +59,7 @@ h1 {
 
 .bodyContainer {
   // height: 100vh; //After more content will be add I can remove this.
+  max-height: 100vh;
   background-image: linear-gradient(
     to bottom,
     #6fffe9,
