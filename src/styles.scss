@@ -18,18 +18,22 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 // General styles
 
 html {
   margin: 0;
-  overflow-y: hidden;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 header {
-  max-height: 16vh;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  // height: 16vh;
+  overflow-y: visible;
+  display: block;
+  z-index: 2;
 }
 
 body {
@@ -58,8 +62,7 @@ h1 {
 // Layout styles
 
 .bodyContainer {
-  // height: 100vh; //After more content will be add I can remove this.
-  max-height: 100vh;
+  height: 100vh;
   background-image: linear-gradient(
     to bottom,
     #6fffe9,
@@ -84,7 +87,7 @@ h1 {
 }
 .contentContainer {
   scroll-snap-align: end;
-  height: 83vh;
+  height: 85vh;
   padding: 0.5rem;
   margin: auto;
   width: 90%;

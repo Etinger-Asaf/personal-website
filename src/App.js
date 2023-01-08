@@ -21,7 +21,7 @@ const App = () => {
           aboutMe={aboutMeRef}
           contact={contactRef}
         />
-        <WaveSvg />
+        {/* <WaveSvg /> */}
       </header>
       <div className="contentScroll">
         <div className="contentContainer" ref={introRef}>
