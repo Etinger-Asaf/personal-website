@@ -323,7 +323,7 @@
 
 .projectFlexContainer {
   display: flex;
-  overflow-y: scroll;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
   height: 90%;
   overflow-y: hidden;
@@ -809,6 +809,10 @@ h1 {
 .bodyContainer {
   height: 100vh;
   background-image: linear-gradient(to bottom, #6fffe9, rgba(91, 192, 190, 0.8), #3a506b, #1c2541, #0b132b, #040812);
+}
+
+.projectContentCon {
+  overflow-x: scroll;
 }
 
 .globalContentContainer {
